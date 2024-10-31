@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassesStudentsMAUI.MainPage"
+             Title="Danh sách lớp">
+
+    <StackLayout>
+        <Button Text="Thêm lớp" Clicked="AddClass_Clicked" />
+        <CollectionView x:Name="ClassListView" SelectionMode="Single" SelectionChanged="OnClassSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding ClassID}" WidthRequest="50"/>
+                        <Label Text="{Binding ClassName}" WidthRequest="150"/>
+                        <Button Text="Sửa" Clicked="EditClass_Clicked" CommandParameter="{Binding .}" />
+                        <Button Text="Xóa" Clicked="DeleteClass_Clicked" CommandParameter="{Binding .}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

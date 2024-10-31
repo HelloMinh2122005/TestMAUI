@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClassesStudentsMAUI.PageAddStudent"
+             Title="Thêm học sinh">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <!-- Entry for Student ID -->
+        <Entry x:Name="StudentIDEntry" Placeholder="Nhập mã học sinh" />
+
+        <!-- Entry for Student Name -->
+        <Entry x:Name="StudentNameEntry" Placeholder="Nhập tên học sinh" />
+
+        <!-- DatePicker for Date of Birth -->
+        <DatePicker x:Name="StudentDOBPicker" MaximumDate="{x:Static system:DateTime.Today}" />
+
+        <!-- Save and Cancel Buttons -->
+        <Button Text="Lưu" Clicked="OnSaveClicked" />
+        <Button Text="Hủy" Clicked="OnCancelClicked" />
+    </VerticalStackLayout>
+</ContentPage>
